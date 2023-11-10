@@ -1,4 +1,4 @@
-# Assembler_program_CarSensor
+# Assembly_program_CarSensor
 Currently, the automotive industry has experienced an immense amount of changes thanks to the constant growth of available technology. Despite this, there are several existing problems today that continue to affect drivers, even with the existence of sufficient tools to solve them. The problem of this industry that we seek to solve in this installment is to detect when a rear light is broken.
 
 As a control unit, it will be taken into account that a common bulb used in brake lights is 12V. In order to detect if a fault occurs within the bulb, a non-intrusive 12V current sensor will be used to check for a short circuit. One sensor it might work with is the Honeywell brand CSNV700N-355, one made to measure this specific voltage. The chosen sensor has a digital output, which is sent to a recording or control device.
