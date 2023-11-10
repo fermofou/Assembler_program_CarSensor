@@ -1,0 +1,64 @@
+﻿ORG 030
+Start,Input /se supone q el voltaje que estara recibiendo es de aprox 12. 
+Store Corriente /guardo input del sensor
+StoreI History /se guarda en memoria
+Load History
+Add One /paso a la sig memoria para el siguiente loop
+Store History /guardo cambio ++
+Load sum
+Add Corriente
+store sum
+Load counter
+subt One
+store counter
+Skipcond 400 /si es igual a 0, se salta linea siguiente
+Jump Start / regreso a start
+Jump Reset / reinicio loop
+
+Reset,Load sum  /error, se debe mostrar al usuario
+DivisionInicio, Store  sum
+Subt veinte
+Skipcond 000
+Jump addProm
+Jump DivisionFinal
+
+addProm,Load promedio
+add One
+Store promedio
+Load sum
+subt veinte
+Store sum
+Jump DivisionInicio
+
+DivisionFinal,Load promedio
+Output
+Subt Ten
+Skipcond 800
+Jump Prender
+Load Foco
+Output
+Fin,Load zero
+Store History
+Store sum
+Store Foco
+Store promedio
+Add veinte
+Store counter
+Jump Start
+
+Prender, Load Foco
+Add One /cambio valor de foco
+Store Foco /se guarda
+Output /lo muestro. esta prendido
+Jump Fin
+
+Corriente, DEC 0
+Ten, Dec 10
+Foco, DEC 0
+One, Dec 1
+History, Hex 0
+counter, dec 20
+sum,dec 0
+veinte,dec 20
+zero,hex 0
+promedio,dec 0
